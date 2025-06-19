@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.classList.remove('blurred');
     });
     
-    // Fonction pour valider l'email
+    // Fonction pour valider l'email avec un regex 
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);

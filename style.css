@@ -5,15 +5,43 @@ body {
     background-color: #f4f4f4;
 }
 
+.add-button-container {
+    text-align: right;
+    margin: 40px 0; 
+    padding-right: 20px; /* Ajout d'un espacement à droite */
+}
+
+.add-button {
+    background-color: #5c8b05;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: inline-block; 
+}
+
+.add-button:hover {
+    background-color: #e55a00;
+    transform: scale(1.05);
+}
+
+
+
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     background: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     transition: filter 0.3s ease;
+    padding-top: 20px; /* Espacement entre h1 et le bouton */
+    padding-bottom: 10px; /* Espacement avant list-title */
 }
+
 
 .container.blurred {
     filter: blur(3px);
@@ -22,29 +50,10 @@ body {
 h1 {
     text-align: center;
     color: #ff6200;
-    font-size: 1.5em;
+    font-size: 2.5em;
 }
 
-.add-button-container {
-    text-align: center;
-    margin: 20px 0;
-}
 
-.add-button {
-    background-color: #5c8b05;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.add-button:hover {
-    background-color: #e55a00;
-    transform: scale(1.05);
-}
 
 .list-section {
     margin: 20px 0;
@@ -69,7 +78,7 @@ input {
 }
 
 button {
-    background-color: #ff6200;
+    background-color: #5c8b05;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -151,6 +160,7 @@ th {
     color: #ff6200;
 }
 
+/*media query pour le responsive*/
 @keyframes slideIn {
     from { transform: translateY(-50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }

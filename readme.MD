@@ -51,9 +51,10 @@ Tableau structuré pour la liste des employés
 Messages d'erreur clairs pour la validation
 Design inspiré des couleurs Orange
 Animations légères au survol des boutons
+Gestion du débordement des emails avec word-break
 
-Structure des fichiers
-AnnuaireEmployes/
+## Structure des fichiers
+PrisnelDIGOU_AnnuaireEmployes/
 ├── index.html
 ├── style.css
 ├── script.js
