@@ -2,12 +2,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const employeeForm = document.getElementById('employeeForm');
     const employeeList = document.getElementById('employeeList');
     const errorMessage = document.getElementById('errorMessage');
+    const openModalButton = document.getElementById('openModalButton');
+    const closeModalButton = document.getElementById('closeModalButton');
+    const modal = document.getElementById('addEmployeeModal');
+    const mainContent = document.getElementById('mainContent');
     
     // Charger les employés depuis localStorage
     let employees = JSON.parse(localStorage.getItem('employees')) || [];
     
     // Afficher les employés au chargement
     renderEmployees();
+    
+    // Ouvrir la modale
+    openModalButton.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        mainContent.classList.add('blurred');
+        employeeForm.reset();
+        errorMessage.style.display = 'none';
+    });
+    
+    // Fermer la modale
+    closeModalButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+        mainContent.classList.remove('blurred');
+    });
+    
+    // Fermer la modale en cliquant à l'extérieur
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            mainContent.classList.remove('blurred');
+        }
+    });
     
     // Gérer la soumission du formulaire
     employeeForm.addEventListener('submit', (e) => {
@@ -25,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (!isValidEmail(email)) {
-            showError('entrez une adresse mail correcte.');
+            showError('Veuillez entrer une adresse email valide.');
             return;
         }
         
@@ -43,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
         saveEmployees();
         renderEmployees();
         employeeForm.reset();
-        errorMessage.style.display = 'none';
+        modal.style.display = 'none';
+        mainContent.classList.remove('blurred');
     });
     
     // Fonction pour valider l'email

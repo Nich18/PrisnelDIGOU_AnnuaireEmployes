@@ -7,11 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="mainContent">
         <h1>Annuaire des Employés Orange</h1>
         
-        <!-- Formulaire d'ajout -->
-        <section class="form-section">
+        <!-- Bouton pour ouvrir la modale -->
+        <div class="add-button-container">
+            <button id="openModalButton" class="add-button">+ Ajouter un employé</button>
+        </div>
+        
+        <!-- Liste des employés -->
+        <section class="list-section">
+            <h2>Liste des employés</h2>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>Nom Complet</th>
+                        <th>Email</th>
+                        <th>Poste</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeList"></tbody>
+            </table>
+        </section>
+    </div>
+    
+    <!-- Modale pour le formulaire -->
+    <div id="addEmployeeModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalButton" class="close">×</span>
             <h2>Ajouter un employé</h2>
             <form id="employeeForm">
                 <div class="form-group">
@@ -33,24 +57,9 @@
                 <button type="submit" id="addButton">Ajouter</button>
             </form>
             <p id="errorMessage" class="error"></p>
-        </section>
-        
-        <!-- Liste des employés -->
-        <section class="list-section">
-            <h2>Liste des employés</h2>
-            <table id="employeeTable">
-                <thead>
-                    <tr>
-                        <th>Nom Complet</th>
-                        <th>Email</th>
-                        <th>Poste</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="employeeList"></tbody>
-            </table>
-        </section>
+        </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
